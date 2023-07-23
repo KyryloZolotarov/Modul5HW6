@@ -1,20 +1,13 @@
-import React, {ReactElement, FC, useEffect, useState} from "react";
-import {
-    CircularProgress,
-    Container,
-    Grid,
-} from '@mui/material'
+import React, {ReactElement, FC} from "react";
 import {
   GridEventListener,
-  useGridApiEventHandler,
-  useGridApiContext,
   DataGrid,
   GridColDef
 } from '@mui/x-data-grid';
 import {IResource} from "../../../interfaces/resources"
 import {useNavigate} from "react-router-dom";
 
-const resourcesTable: FC<any> = (props): ReactElement => {
+const ResourcesTable: FC<any> = (props): ReactElement => {
   const navigate = useNavigate()
     const columns: GridColDef[] = [
         { field: 'id', headerName: 'ID', width: 70 },
@@ -31,8 +24,6 @@ for(let i=0; i<temp.length; i++){
 }
 
 const handleRowClick: GridEventListener<'rowClick'> = (  params, event, details) => {
-  console.log("event trigered");
-  console.log(params);
   navigate(`/resource/${params.row.id}`);
 }
 
@@ -51,4 +42,4 @@ const handleRowClick: GridEventListener<'rowClick'> = (  params, event, details)
  );
 }
 
-export default resourcesTable
+export default ResourcesTable

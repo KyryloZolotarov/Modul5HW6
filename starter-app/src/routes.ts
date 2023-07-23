@@ -8,6 +8,8 @@ import SingleResource from "./pages/SingleResource";
 
 // other
 import {FC} from "react";
+import UserDataUpdate from "./pages/UserDataUpdate/UserDataUpdate";
+import UserCreate from "./pages/UserCreate/UserCreate";
 
 // interface
 interface Route {
@@ -60,5 +62,19 @@ export const routes: Array<Route> = [
         path: '/resource/:id',
         enabled: false,
         component: SingleResource
+    },
+    {
+        key: 'userUpdate-route',
+        title: 'User Updated',
+        path: '/user-updated/:id',
+        enabled: false,
+        component: UserDataUpdate
+    },
+    {
+        key: 'userCreate-route',
+        title: 'User Created',
+        path: '/user-created',
+        enabled: false,
+        component: UserCreate
     }
 ]

@@ -1,4 +1,4 @@
-export interface IUserCreated {
+export interface IUserCreateResponse {
     'name': string,
     'job': string,
     'id': number,

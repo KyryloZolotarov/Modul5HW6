@@ -4,12 +4,14 @@ import * as userApi from "../../api/modules/users";
 import {IUser} from "../../interfaces/users";
 import UserCard from "./components";
 import Button from '@mui/material/Button';
+import {useNavigate} from "react-router-dom";
 
 const Home: FC<any> = (): ReactElement => {
     const [users, setUsers] = useState<IUser[] | null>(null)
     const [totalPages, setTotalPages] = useState<number>(0)
     const [currentPage, setCurrentPage] = useState<number>(1)
     const [isLoading, setIsLoading] = useState<boolean>(false)
+    const navigate = useNavigate()
 
     useEffect(() => {
         const getUser = async () => {
@@ -37,7 +39,7 @@ const Home: FC<any> = (): ReactElement => {
                   justifyContent: 'flex-end'
               }}
             >
-                <Button variant="outlined">Create User</Button>
+                <Button onClick={() => navigate(`/user-created`)} variant="outlined">Create User</Button>
             </Box>        
           <Grid container spacing={4} justifyContent="center" my={4}>
               {isLoading ? (

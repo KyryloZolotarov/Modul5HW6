@@ -4,7 +4,6 @@ import {
     Container,
     Grid,
 } from '@mui/material'
-import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid'
 import * as resourcesApi from "../../api/modules/resources"
 import ResourcesTable from "./components";
 import {IResource} from "../../interfaces/resources"

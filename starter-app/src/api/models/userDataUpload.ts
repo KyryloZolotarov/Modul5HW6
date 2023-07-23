@@ -1,4 +1,4 @@
-export interface IUserData {
+export interface IUserDataRequest {
     'name': string,
     'job': string,
 }

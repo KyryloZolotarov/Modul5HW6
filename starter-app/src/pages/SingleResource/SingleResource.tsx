@@ -1,16 +1,8 @@
 import React, {ReactElement, FC, useEffect, useState} from "react";
 import {
-    Box,
-    Card,
-    CardActions,
-    CardContent,
-    CardMedia,
     CircularProgress,
     Container,
-    Grid,
-    Pagination,
-    Typography,
-    Button
+    Grid
 } from '@mui/material'
 import * as resourcesApi from "../../api/modules/resources"
 import {IResource} from "../../interfaces/resources"

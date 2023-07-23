@@ -1,6 +1,5 @@
 import React, {ReactElement, FC, useEffect, useState} from "react";
 import {
-    Box,
     Card,
     CardActions,
     CardContent,
@@ -8,18 +7,19 @@ import {
     CircularProgress,
     Container,
     Grid,
-    Pagination,
     Typography,
     Button
 } from '@mui/material'
 import * as userApi from "../../api/modules/users"
 import {IUser} from "../../interfaces/users";
 import {useParams} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 const User: FC<any> = (): ReactElement => {
     const [user, setUser] = useState<IUser | null>(null)
     const [isLoading, setIsLoading] = useState<boolean>(false)
     const { id } = useParams()
+    const navigate = useNavigate()
 
     useEffect(() => {
         if (id) {
@@ -62,7 +62,7 @@ const User: FC<any> = (): ReactElement => {
                                 </Typography>
                             </CardContent>
                             <CardActions>
-                                <Button variant="outlined">
+                                <Button onClick={() => navigate(`/user-updated/${user?.id}`)} variant="outlined">
                                     Update User
                                 </Button>
                             </CardActions>
